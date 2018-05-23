@@ -6,7 +6,7 @@
     sudo apt-get install git
     git clone https://github.com/ygowill/linux.git
     cd ./linux
-    sudo chmod +x ubuntu_opencv_installation.sh
+    sudo chmod +x ubuntu_opencv_install.sh
     source /etc/bash.bashrc
     sudo updatedb
 
