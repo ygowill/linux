@@ -7,7 +7,8 @@
     git clone https://github.com/ygowill/linux.git
     cd ./linux
     sudo chmod +x ubuntu_opencv_install.sh
-    source /etc/bash.bashrc
+    sh ubuntu_opencv_install.sh
+    source /etc/bash.bashrc
     sudo updatedb
 
 在安装完成后，可使用如下指令运行示例程序，判断安装是否成功。
