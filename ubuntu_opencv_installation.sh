@@ -7,7 +7,7 @@
 echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m     process start       \033[0m"
 echo "\033[44;37m*************************\033[0m"
-cd /home/$LOGNAME/Downloads
+echo ""
 echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m     install wget        \033[0m"
 echo "\033[44;37m*************************\033[0m"
@@ -16,10 +16,6 @@ echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m     install unzip       \033[0m"
 echo "\033[44;37m*************************\033[0m"
 yes | sudo apt-get install unzip
-echo "\033[44;37m*************************\033[0m"
-echo "\033[44;37m  install resources      \033[0m"
-echo "\033[44;37m*************************\033[0m"
-git clone https://github.com/ygowill/linux.git
 echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m   unzip opencv3.4.1     \033[0m"
 echo "\033[44;37m*************************\033[0m"
@@ -31,7 +27,7 @@ yes | sudo apt-get install cmake
 echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m  install dependencies   \033[0m"
 echo "\033[44;37m*************************\033[0m"
-yes | sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg.dev libtiff4.dev libswscale-dev libjasper-dev
+yes | sudo apt-get install build-essential libgtk2.0-dev libgtk-3-dev libavcodec-dev libavformat-dev libjpeg-dev libtiff5-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev libv4l-dev liblapacke-dev libxvidcore-dev libx264-dev libatlas-base-dev gfortran ffmpeg
 cd ./opencv-3.4.1
 mkdir build
 cd ./build
@@ -50,9 +46,10 @@ echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m       install make      \033[0m"
 echo "\033[44;37m*************************\033[0m"
 sudo make install
+sudo touch /etc/ld.so.conf.d/opencv.conf
+sudo chmod 777 /etc/ld.so.conf.d/opencv.conf
 echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf
 sudo ldconfig
-echo "PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig\n" >> /etc/bash.bashrc
+sudo chmod 777 /etc/bash.bashrc
+echo "PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig" >> /etc/bash.bashrc
 echo "export PKG_CONFIG_PATH" >> /etc/bash.bashrc
-source /etc/bash.bashrc
-sudo updatedb
