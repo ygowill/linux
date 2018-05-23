@@ -13,13 +13,13 @@ echo "\033[44;37m     install wget        \033[0m"
 echo "\033[44;37m*************************\033[0m"
 yes | sudo apt-get install wget
 echo "\033[44;37m*************************\033[0m"
-echo "\033[44;37m  start download OpenCV  \033[0m"
-echo "\033[44;37m*************************\033[0m"
-wget https://github.com/opencv/opencv/archive/3.4.1.zip
-echo "\033[44;37m*************************\033[0m"
-echo "\033[44;37m  strat to install unzip \033[0m"
+echo "\033[44;37m     install unzip       \033[0m"
 echo "\033[44;37m*************************\033[0m"
 yes | sudo apt-get install unzip
+echo "\033[44;37m*************************\033[0m"
+echo "\033[44;37m  install resources      \033[0m"
+echo "\033[44;37m*************************\033[0m"
+git clone https://github.com/ygowill/linux.git
 echo "\033[44;37m*************************\033[0m"
 echo "\033[44;37m   unzip opencv3.4.1     \033[0m"
 echo "\033[44;37m*************************\033[0m"
